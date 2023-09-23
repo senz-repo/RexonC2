@@ -123,7 +123,7 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("Attack Sending to : {url}\n\n")
+		fmt.Println("Attack Sending | Attacking...\n\n")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
