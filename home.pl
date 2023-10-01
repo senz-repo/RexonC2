@@ -1,9 +1,3 @@
-#!/usr/bin/perl
-
-##
-# DgH By SnowmaN<----
-##
-
 use Socket;
 use strict;
 
