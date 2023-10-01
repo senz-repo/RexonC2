@@ -27,6 +27,7 @@ sudo apt-get install npm -y
 How to use: 
 - Recommended in shell of google, azure,...
 - Using vps with high speed will be stronger
+# Installations
 
 ```git clone https://github.com/senz-repo/RexonC2
 cd RexonC2
