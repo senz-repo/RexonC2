@@ -1,8 +1,3 @@
-#!/usr/bin/perl
- 
-##
-#!/usr/bin/perl
- 
 use Socket;
 use strict;
  
