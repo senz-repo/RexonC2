@@ -682,7 +682,7 @@ def main():
 
         elif "help" in cnc:
             print(f'''
-Layer  > SHOW LAYER7 METHODS
+Layer7  > SHOW LAYER7 METHODS
 Layer4  > SHOW LAYER4 METHODS
 Rules   > RULES PANEL
 Ports   > SHOW ALL PORTS
