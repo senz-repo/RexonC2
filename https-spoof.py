@@ -1,7 +1,6 @@
-# Raven Stresser Method
+# Rexon Project
 # HTTPS-SPOOF
-# Created by SkyWtkh
-
+# Created by iSenz & Zippy
 import socket
 import socks
 import ssl
