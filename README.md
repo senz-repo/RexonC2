@@ -27,9 +27,10 @@ sudo apt-get install npm -y
 How to use: 
 - Recommended in shell of google, azure,...
 - Using vps with high speed will be stronger
-# Installations
 
-```git clone https://github.com/senz-repo/RexonC2
+
+```sh
+git clone https://github.com/senz-repo/RexonC2
 cd RexonC2
 npm i requests && npm i https-proxy-agent && npm i crypto-random-string && npm i events && npm i fs && npm i net && npm i cloudscraper && npm i request && npm i hcaptcha-solver && npm i randomstring && npm i cluster && npm i cloudflare-bypasser
 pip3 install -r requirements.txt
