@@ -1,5 +1,3 @@
-#!/usr/bin/perl
- 
 use Term::ANSIColor qw(:constants);
     $Term::ANSIColor::AUTORESET = 2;
 
